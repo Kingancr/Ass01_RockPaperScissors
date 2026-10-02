@@ -15,7 +15,7 @@ public class Main {
         }
     }
     static void main() {
-        Boolean done = false;
+        boolean done = false;
         Scanner scanner = new Scanner(System.in);
         do {
             System.out.print("What is your move player A (R, P, S): ");
