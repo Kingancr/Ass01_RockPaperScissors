@@ -56,9 +56,7 @@ public class Main {
             }
             System.out.print("Do you want to Continue [Y/N]: ");
             String doesPlayerContinue = scanner.next();
-            if (doesPlayerContinue.equalsIgnoreCase("Y")) {
-            }
-            else if (doesPlayerContinue.equalsIgnoreCase("N")) {
+            if (doesPlayerContinue.equalsIgnoreCase("N")) {
                 System.out.println("Quitting");
                 done = true;
             }
