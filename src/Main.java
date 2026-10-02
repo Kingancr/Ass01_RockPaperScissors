@@ -15,8 +15,9 @@ public class Main {
         }
     }
     static void main() {
+        Boolean done = false;
         Scanner scanner = new Scanner(System.in);
-        while(true) {
+        do {
             System.out.print("What is your move player A (R, P, S): ");
             String playerAMove = scanner.next();
             if (!playerAMove.equalsIgnoreCase("r") && !playerAMove.equalsIgnoreCase("p") && !playerAMove.equalsIgnoreCase("s")) {
@@ -42,7 +43,7 @@ public class Main {
                 System.out.println("Player A Wins, Paper Covers Rock");
             }
             else if (playerAMove.equals("Scissors") && playerBMove.equals("Paper")) {
-                System.out.println("Player A Wins, Scissors Cuts Rock");
+                System.out.println("Player A Wins, Scissors Cuts Paper");
             }
             else if (playerBMove.equals("Rock") && playerAMove.equals("Scissors")) {
                 System.out.println("Player B Wins, Rock breaks Scissors");
@@ -51,21 +52,19 @@ public class Main {
                 System.out.println("Player B Wins, Paper Covers Rock");
             }
             else if (playerBMove.equals("Scissors") && playerAMove.equals("Paper")) {
-                System.out.println("Player B Wins, Scissors Cuts Rock");
+                System.out.println("Player B Wins, Scissors Cuts Paper");
             }
-            while (true) {
-                System.out.print("Do you want to Continue [Y/N]: ");
-                String doesPlayerContinue = scanner.next();
-                if (doesPlayerContinue.equalsIgnoreCase("Y")) {
-                    break;
-                } else if (doesPlayerContinue.equalsIgnoreCase("N")) {
-                    System.out.println("Quitting");
-                    System.exit(0);
-                }
-                else {
-                    System.out.println("Invalid choice");
-                }
+            System.out.print("Do you want to Continue [Y/N]: ");
+            String doesPlayerContinue = scanner.next();
+            if (doesPlayerContinue.equalsIgnoreCase("Y")) {
             }
-        }
+            else if (doesPlayerContinue.equalsIgnoreCase("N")) {
+                System.out.println("Quitting");
+                done = true;
+            }
+            else {
+                System.out.println("Invalid choice, Continuing");
+            }
+        } while (!done);
     }
 }
